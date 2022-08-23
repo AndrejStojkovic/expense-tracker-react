@@ -3,6 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
+import Categories from './components/Categories';
 
 function App() {
   return (
@@ -24,9 +25,9 @@ function App() {
               <li className='mx-2 text-gray-300'>|</li>
               <li>
                 <Link to='/profile' className='flex items-center hover:bg-gray-100 px-2 py-1 rounded-md'>
-                  <img src='./media/no-user-photo.jpg' className='rounded-full h-8 w-8' alt='user-photo' />
+                  <img src='./media/no-user-photo.jpg' className='rounded-full h-8 w-8' alt='user' />
                   <div className='inline-block text-gray-600 py-2 pl-2'>
-                    Hi, <span className='font-semibold'>Username</span>!
+                    Hi, <span className='font-semibold'>John</span>!
                   </div>
                 </Link>
               </li>
@@ -71,6 +72,14 @@ function App() {
               </Link>
             </li>
             <li>
+              <Link to='/reports' className='flex items-center p-2 px-6 text-base font-normal text-gray-600 hover:text-gray-900 hover:bg-gray-100'>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25M9 16.5v.75m3-3v3M15 12v5.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                </svg>
+                <span className="ml-2 font-normal">Reports</span>
+              </Link>
+            </li>
+            <li>
               <Link to='/settings' className='flex items-center p-2 px-6 text-base font-normal text-gray-600 hover:text-gray-900 hover:bg-gray-100'>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -94,8 +103,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='/profile' element={<Profile />} />
-          {/* <Route path='/help' element={<Help />} />
           <Route path='/categories' element={<Categories />} />
+          {/* <Route path='/help' element={<Help />} />
           <Route path='/transactions' element={<Transactions />} />
           <Route path='/settings' element={<Settings />} />*/}
         </Routes>

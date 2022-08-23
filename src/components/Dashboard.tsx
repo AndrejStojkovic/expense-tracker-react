@@ -21,10 +21,10 @@ const Dashboard = () => {
       </div>
 
       <div>
-        <div>Income and Expense Line Chart</div>
+        <div className='text-center text-sm font-semibold'>Income and Expense Line Chart</div>
         <LineChart />
 
-        <div className='flex my-5 text-center'>
+        <div className='flex m-5 text-center text-sm font-semibold'>
           <div className='w-1/3 flex-1 mr-4'>
             <div>Income and Expense Doughnut Chart</div>
             <DoughnutChart />

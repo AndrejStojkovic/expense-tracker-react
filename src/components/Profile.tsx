@@ -8,25 +8,25 @@ const Profile = () => {
       <div className='flex my-2 items-start'>
         <div className='flex-none w-1/3'>
           <div className='mb-2'>
-            <label htmlFor='name' className='block text-gray-700 text-sm font-bold mb-2'>First Name</label>
-            <input type='text' className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' name='name' id='name' value='John' />
+            <label htmlFor='first_name' className='block text-gray-700 text-sm font-bold mb-2'>First Name</label>
+            <input type='text' className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' name='first_name' id='first_name' value='John' />
           </div>
 
           <div>
-            <label htmlFor='name' className='block text-gray-700 text-sm font-bold mb-2'>Last Name</label>
-            <input type='text' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name='name' id='name' value='Doe' />
+            <label htmlFor='last_name' className='block text-gray-700 text-sm font-bold mb-2'>Last Name</label>
+            <input type='text' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name='last_name' id='last_name' value='Doe' />
           </div>
         </div>
 
         <div className='flex-1 flex flex-col items-center p-0'>
           <div className='text-lg font-semibold text-gray-500 mb-1'>Your Avatar</div>
-          <img className='h-40 w-40 rounded-full mt-1 mb-2' src='./media/no-user-photo.jpg' alt='user-photo' />
+          <img className='h-40 w-40 rounded-full mt-1 mb-2' src='./media/no-user-photo.jpg' alt='user' />
           <input type="file" className='block text-sm text-slate-500
             file:mr-4 file:py-2 file:px-4
             file:rounded-full file:border-0
             file:text-sm file:font-semibold
-            file:bg-violet-50 file:text-blue-700
-            hover:file:bg-violet-100
+            file:bg-blue-50 file:text-blue-700
+            hover:file:bg-blue-100
           '/>
         </div>
       </div>
@@ -36,7 +36,7 @@ const Profile = () => {
       <div className='text-gray-700'>
         <div className='font-semibold text-lg mb-1'>E-Mail Address</div>
         <div className='flex justify-between'>
-          <div>Your E-Mail address is: <span className='font-bold'>youremailaddress@provider.com</span></div>
+          <div>Your E-Mail address is: <span className='font-bold'>johndoe12@etr.com</span></div>
           <button className='text-blue-500 underline'>Change</button>
         </div>
       </div>
