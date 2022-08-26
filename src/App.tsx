@@ -6,6 +6,7 @@ import Profile from './components/Profile';
 import Categories from './components/Categories';
 import Transactions from './components/Transactions';
 import Reports from './components/Reports';
+import Settings from './components/Settings';
 
 function App() {
   return (
@@ -108,8 +109,9 @@ function App() {
           <Route path='/categories' element={<Categories />} />
           <Route path='/transactions' element={<Transactions />} />
           <Route path='/reports' element={<Reports />} />
+          <Route path='/settings' element={<Settings />} />
           {/* <Route path='/help' element={<Help />} />
-          <Route path='/settings' element={<Settings />} />*/}
+          */}
         </Routes>
         
       </div>
