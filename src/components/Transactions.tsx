@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Categories = () => {
+const Transactions = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [maxPageNumber, setMaxPageNumber] = useState(1);
 
@@ -9,15 +9,15 @@ const Categories = () => {
 
   return (
     <div className='flex-1 bg-white drop-shadow-custom p-6 pt-4 ml-6'>
-      <div className='text-xl font-bold text-blue-500'>Categories</div>
+      <div className='text-xl font-bold text-blue-500'>Transactions</div>
 
-      <div className='container mx-auto px-16 mb-5'>
+      <div className='container mx-auto px-10 mb-5'>
         <div className='w-full flex justify-end items-center mt-4 mb-3'>
           <button className='bg-green-500 hover:bg-green-600 text-white font-semibold p-2 rounded-md flex items-center gap-1 drop-shadow-md'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v18m9-9H3" />
             </svg>
-            Add Category
+            Add Transaction
           </button>
         </div>
 
@@ -29,10 +29,13 @@ const Categories = () => {
                   Name
                 </th>
                 <th scope='col' className='w-1/4 p-3'>
-                  Color
+                  Amount
                 </th>
                 <th scope='col' className='w-1/4 p-3'>
-                  Type
+                  Category
+                </th>
+                <th scope='col' className='w-1/4 p-3'>
+                  Date
                 </th>
                 <th scope='col' className='w-1/4 p-3'>
                   Actions
@@ -42,16 +45,16 @@ const Categories = () => {
             <tbody>
               <tr className='bg-white border-b hover:bg-gray-50'>
                 <th scope='row' className='px-3 py-2 font-medium text-gray-900'>
-                  Category Name 1
+                  Transaction 1
                 </th>
                 <th scope='row' className='px-3 py-2 font-medium text-gray-900'>
-                  <div style={{borderColor: 'rgb(34 197 94)', background: 'rgb(134 239 172)'}}
-                  className='w-1/2 h-4 border-2 mx-auto rounded-sm'></div>
+                  $32,000
+                </th>
+                <th scope='row' className='px-3 py-2 font-medium text-gray-900'>
+                  Category Name 1
                 </th>
                 <th scope='row' className='px-6 py-2 font-medium text-gray-900'>
-                  <div className='p-1 bg-green-500 rounded text-white'>
-                    Income
-                  </div>
+                  01.01.1990
                 </th>
                 <th scope='row' className='px-3 py-2 font-medium text-gray-900 flex justify-center'>
                   <button className='text-gray-700 hover:text-gray-900 hover:bg-gray-100 p-1 rounded-sm hover:cursor-pointer' title='Edit Category'>
@@ -71,16 +74,16 @@ const Categories = () => {
             <tbody>
               <tr className='bg-white border-b hover:bg-gray-50'>
                 <th scope='row' className='px-3 py-2 font-medium text-gray-900'>
-                  Category Name 2
+                  Transaction 2
                 </th>
                 <th scope='row' className='px-3 py-2 font-medium text-gray-900'>
-                  <div style={{borderColor: 'rgb(255 36 36)', background: 'rgb(255 138 138)'}}
-                  className='w-1/2 h-4 border-2 mx-auto rounded-sm'></div>
+                  $17,520
+                </th>
+                <th scope='row' className='px-3 py-2 font-medium text-gray-900'>
+                  Category Name 2
                 </th>
                 <th scope='row' className='px-6 py-2 font-medium text-gray-900'>
-                  <div className='p-1 bg-red-500 rounded text-white'>
-                    Expense
-                  </div>
+                  01.01.1990
                 </th>
                 <th scope='row' className='px-3 py-2 font-medium text-gray-900 flex justify-center'>
                   <button className='text-gray-700 hover:text-gray-900 hover:bg-gray-100 p-1 rounded-sm hover:cursor-pointer' title='Edit Category'>
@@ -125,4 +128,4 @@ const Categories = () => {
   )
 }
 
-export default Categories;
+export default Transactions;

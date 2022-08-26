@@ -13,8 +13,10 @@ type StatusProps = {
 
 const Dashboard = () => {
   return (
-    <div className='flex-1 bg-white drop-shadow-custom p-5 pt-3 ml-6'>
-      <div className='flex justify-center mb-3 mx-4'>
+    <div className='flex-1 bg-white drop-shadow-custom p-6 pt-3 ml-6'>
+      <div className='text-xl font-bold text-blue-500 mb-5'>Dashboard</div>
+
+      <div className='flex justify-center mb-8 mx-4'>
         <StatusBar value={32000} displayText='Income' currency='$' color='green' />
         <StatusBar value={17520} displayText='Expenses' currency='$' color='red' />
         <StatusBar value={14480} displayText='Income' currency='$' color='blue' />

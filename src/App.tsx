@@ -4,6 +4,8 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import Categories from './components/Categories';
+import Transactions from './components/Transactions';
+import Reports from './components/Reports';
 
 function App() {
   return (
@@ -104,8 +106,9 @@ function App() {
           <Route path='/' element={<Dashboard />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/categories' element={<Categories />} />
-          {/* <Route path='/help' element={<Help />} />
           <Route path='/transactions' element={<Transactions />} />
+          <Route path='/reports' element={<Reports />} />
+          {/* <Route path='/help' element={<Help />} />
           <Route path='/settings' element={<Settings />} />*/}
         </Routes>
         
