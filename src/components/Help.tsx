@@ -15,8 +15,8 @@ const Help = () => {
           {faquestions.map((obj, index) => {
             return (
               <div key={index} className='mb-1'>
-                <div className='font-semibold italic text-lg'>Q: {obj.question}</div>
-                <div className='text-lg'>A: {obj.answer}</div>
+                <div className='font-semibold italic text-md'>Q: {obj.question}</div>
+                <div className='text-md'>A: {obj.answer}</div>
               </div>
             )
           })}

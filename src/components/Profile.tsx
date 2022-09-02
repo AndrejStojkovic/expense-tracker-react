@@ -6,15 +6,15 @@ const Profile = () => {
       <div className='text-xl font-bold text-blue-500 mb-5'>Edit Profile</div>
 
       <div className='flex my-2 items-start'>
-        <div className='flex-none w-1/3 mr-20'>
+        <div className='flex-none w-72 mr-10'>
           <div className='mb-2'>
             <label htmlFor='first_name' className='block text-gray-700 text-sm font-bold mb-2'>First Name</label>
-            <input type='text' className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' name='first_name' id='first_name' value='John' />
+            <input type='text' className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' name='first_name' id='first_name' defaultValue='John' />
           </div>
  
           <div>
             <label htmlFor='last_name' className='block text-gray-700 text-sm font-bold mb-2'>Last Name</label>
-            <input type='text' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name='last_name' id='last_name' value='Doe' />
+            <input type='text' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name='last_name' id='last_name' defaultValue='Doe' />
           </div>
         </div>
 
@@ -26,8 +26,7 @@ const Profile = () => {
             file:rounded-full file:border-0
             file:text-sm file:font-semibold
             file:bg-blue-50 file:text-blue-700
-            hover:file:bg-blue-100
-          '/>
+            hover:file:bg-blue-100'/>
         </div>
       </div>
 
