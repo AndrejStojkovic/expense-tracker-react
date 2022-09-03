@@ -35,7 +35,7 @@ const Profile = () => {
       <div className='text-gray-700'>
         <div className='font-semibold text-lg mb-1'>E-Mail Address</div>
         <div className='flex justify-between'>
-          <div>Your E-Mail address is: <span className='font-bold'>johndoe12@etr.com</span></div>
+          <div>Your E-Mail address is: <span className='font-bold'>johndoe@company.com</span></div>
           <button className='text-blue-500 underline'>Change</button>
         </div>
       </div>
