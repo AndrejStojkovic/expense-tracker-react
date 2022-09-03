@@ -9,12 +9,28 @@ const Profile = () => {
         <div className='flex-none w-72 mr-10'>
           <div className='mb-2'>
             <label htmlFor='first_name' className='block text-gray-700 text-sm font-bold mb-2'>First Name</label>
-            <input type='text' className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' name='first_name' id='first_name' defaultValue='John' />
+            <input type='text' name='first_name' id='first_name' className='bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' defaultValue='John' />
           </div>
  
-          <div>
+          <div className='mb-2'>
             <label htmlFor='last_name' className='block text-gray-700 text-sm font-bold mb-2'>Last Name</label>
-            <input type='text' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name='last_name' id='last_name' defaultValue='Doe' />
+            <input type='text' name='last_name' id='last_name' className='bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' defaultValue='Doe' />
+          </div>
+
+          <div className='mb-2'>
+            <label htmlFor='country' className='block text-gray-700 text-sm font-bold mb-2'>Country</label>
+            <input type='text' name='country' id='country' className='bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' defaultValue='United States of America' />
+          </div>
+
+          <div className='mb-4'>
+            <label htmlFor='currency' className='block text-gray-700 text-sm font-bold mb-2'>Currency</label>
+            <input type='text' name='currency' id='currency' className='bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' defaultValue='$' />
+          </div>
+
+          <div className='mt-2'>
+            <button className='bg-blue-500 hover:bg-blue-600 text-white font-semibold p-2 px-5 rounded-md flex items-center gap-1 drop-shadow-md'>
+              Update Profile
+            </button>
           </div>
         </div>
 

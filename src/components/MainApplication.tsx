@@ -1,7 +1,8 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import Auth from'./Utils/Auth';
 import Footer from './Footer';
+
 import Dashboard from './Dashboard';
 import Profile from './Profile';
 import Categories from './Categories';
@@ -9,19 +10,19 @@ import Transactions from './Transactions';
 import Reports from './Reports';
 import Help from './Help';
 
-const MainApplication = () => {
+const MainApplication = (props: any) => {
   return (
     <div>
       <nav id='header' className='bg-white w-full z-10 top-0 drop-shadow-custom'>
         <div className='w-full max-w-screen-lg mx-auto flex flex-wrap items-center justify-between mt-0 py-2'>
-          <Link to='/' className='text-blue-500 hover:text-blue-600 no-underline hover:no-underline font-extrabold text-2xl'>
+          <Link to='/app' className='text-blue-500 hover:text-blue-600 no-underline hover:no-underline font-extrabold text-2xl'>
             ExpenseTracker
           </Link>
 
           <div className='w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-gray-100 md:bg-transparent z-20'>
             <ul className='list-reset lg:flex justify-end flex-1 items-center'>
               <li>
-                <Link to='/' className='inline-block text-gray-600 hover:text-gray-900 no-underline py-2 px-4 font-semibold'>Home</Link>
+                <Link to='/app' className='inline-block text-gray-600 hover:text-gray-900 no-underline py-2 px-4 font-semibold'>Home</Link>
               </li>
               <li>
                 <Link to='/help' className='inline-block text-gray-600 hover:text-gray-900 no-underline py-2 px-4 font-semibold'>Need help?</Link>
@@ -34,6 +35,12 @@ const MainApplication = () => {
                     Hi, <span className='font-semibold'>John</span>!
                   </div>
                 </Link>
+              </li>
+              <li>
+                <button className='inline-block text-gray-600 hover:text-gray-900 no-underline py-2 px-4 font-semibold'
+                  onClick={() => console.log('log out')}>
+                  Logout
+                </button>
               </li>
             </ul>
           </div>
@@ -52,7 +59,7 @@ const MainApplication = () => {
               </Link>
             </li>
             <li>
-              <Link to='/' className='flex items-center p-2 px-6 text-base font-normal text-gray-600 hover:text-gray-900 hover:bg-gray-100'>
+              <Link to='/app' className='flex items-center p-2 px-6 text-base font-normal text-gray-600 hover:text-gray-900 hover:bg-gray-100'>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                 </svg>
@@ -95,7 +102,7 @@ const MainApplication = () => {
         </div>
 
         <Routes>
-          <Route path='/' element={<Dashboard />} />
+          <Route path='/*' element={<Dashboard />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/categories' element={<Categories />} />
           <Route path='/transactions' element={<Transactions />} />

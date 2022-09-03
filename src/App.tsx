@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import MainApplication from './components/MainApplication';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import ProtectedRoute from './components/Utils/ProtectedRoute';
 
 function App() {
-  const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
-
   return (
     <div className='App'>
-      {isUserAuthenticated ? (
-        <MainApplication />
-      ) : (
-        <SignUp />
-      )}
+      <Routes>
+        <Route path='/' element={<ProtectedRoute />}>
+          <Route path='/*' element={<MainApplication />} />
+        </Route>
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
+      </Routes>
     </div>
   );
 }
