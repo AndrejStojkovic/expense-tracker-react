@@ -11,15 +11,18 @@ const SignUp = (props : any) => {
   const confirmPassword = useRef<HTMLInputElement>(null!);;
 
   const SignUpHandle = (e: React.FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+    //e.preventDefault();
     console.log(firstName.current.value);
     console.log(lastName.current.value);
     console.log(email.current.value);
     console.log(country.current.value);
     console.log(password.current.value);
     console.log(confirmPassword.current.value);
-    
+
     // add a check to see if passwords match
+    if(password.current.value !== confirmPassword.current.value) {
+
+    }
   }
 
   return (
