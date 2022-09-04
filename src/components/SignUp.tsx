@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import Auth from './Utils/Auth';
+import { Link } from 'react-router-dom';
+import { countries } from './Utils/Countries';
 
 const SignUp = (props : any) => {
   return (
@@ -24,10 +24,22 @@ const SignUp = (props : any) => {
                 <input type='text' name='last_name' id='last_name' className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' placeholder='Doe' required />
               </div>
             </div>
-            
             <div className='mt-2'>
               <label htmlFor='email' className='block mb-2 text-sm font-medium text-gray-900'>Your email</label>
               <input type='email' name='email' id='email' className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' placeholder='johndoe@company.com' required />
+            </div>
+            <div className='mt-2'>
+              <label htmlFor='country' className='block mb-2 text-sm font-medium text-gray-900'>Country</label>
+              <select name='country' id='country' className='bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' required>
+                <option selected disabled>Select a country</option>
+                {countries.map((el, index) => {
+                  return (
+                    <option key={index} value={el.name}>
+                      {el.name}
+                    </option>
+                  )
+                })}
+              </select>
             </div>
             <div className='mt-2'>
               <label htmlFor='password' className='block mb-2 text-sm font-medium text-gray-900'>Password</label>
