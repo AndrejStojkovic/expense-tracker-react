@@ -9,9 +9,9 @@ const Transactions = () => {
 
   return (
     <div className='flex-1 bg-white drop-shadow-custom p-6 pt-4 ml-6'>
-      <div className='text-xl font-bold text-blue-500'>Transactions</div>
+      <div className='text-xl font-bold text-gray-800'>Transactions</div>
 
-      <div className='container mx-auto px-10 mb-5'>
+      <div className='container mx-auto px-8 mb-5'>
         <div className='w-full flex justify-end items-center mt-4 mb-3'>
           <button className='bg-green-500 hover:bg-green-600 text-white font-semibold p-2 rounded-md flex items-center gap-1 drop-shadow-md'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">

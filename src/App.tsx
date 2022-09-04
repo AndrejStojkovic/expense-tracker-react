@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import MainApplication from './components/MainApplication';
@@ -10,8 +10,8 @@ function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route path='/' element={<ProtectedRoute />}>
-          <Route path='/*' element={<MainApplication />} />
+        <Route path='/*' element={<ProtectedRoute />}>
+          <Route path='/**' element={<MainApplication />} />
         </Route>
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<SignUp />} />

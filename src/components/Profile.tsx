@@ -5,7 +5,7 @@ import { currencies } from './Utils/Currencies';
 const Profile = () => {
   return (
     <div className='flex-1 bg-white drop-shadow-custom p-6 pt-4 ml-6'>
-      <div className='text-xl font-bold text-blue-500 mb-5'>Edit Profile</div>
+      <div className='text-xl font-bold text-gray-800 mb-5'>Edit Profile</div>
 
       <div className='flex my-2 items-start'>
         <div className='flex-none w-72 mr-10'>

@@ -9,7 +9,7 @@ const Categories = () => {
 
   return (
     <div className='flex-1 bg-white drop-shadow-custom p-6 pt-4 ml-6'>
-      <div className='text-xl font-bold text-blue-500'>Categories</div>
+      <div className='text-xl font-bold text-gray-800'>Categories</div>
 
       <div className='container mx-auto px-16 mb-5'>
         <div className='w-full flex justify-end items-center mt-4 mb-3'>
