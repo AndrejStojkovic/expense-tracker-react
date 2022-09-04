@@ -1,8 +1,27 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { countries } from './Utils/Countries';
 
 const SignUp = (props : any) => {
+  const firstName = useRef<HTMLInputElement>(null!);
+  const lastName = useRef<HTMLInputElement>(null!);
+  const email = useRef<HTMLInputElement>(null!);
+  const country = useRef<HTMLSelectElement>(null!);
+  const password = useRef<HTMLInputElement>(null!);;
+  const confirmPassword = useRef<HTMLInputElement>(null!);;
+
+  const SignUpHandle = (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    console.log(firstName.current.value);
+    console.log(lastName.current.value);
+    console.log(email.current.value);
+    console.log(country.current.value);
+    console.log(password.current.value);
+    console.log(confirmPassword.current.value);
+    
+    // add a check to see if passwords match
+  }
+
   return (
     <div className='w-full h-full flex flex-col justify-center items-center'>
       <div className='text-blue-500 no-underline font-extrabold text-3xl cursor-default mb-4'>
@@ -17,20 +36,20 @@ const SignUp = (props : any) => {
             <div className='flex justify-between'>
               <div>
                 <label htmlFor='first_name' className='block mb-2 text-sm font-medium text-gray-900'>First Name</label>
-                <input type='text' name='first_name' id='first_name' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' placeholder='John' required />
+                <input type='text' name='first_name' id='first_name' ref={firstName} className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' placeholder='John' required />
               </div>
               <div>
                 <label htmlFor='last_name' className='block mb-2 text-sm font-medium text-gray-900'>Last Name</label>
-                <input type='text' name='last_name' id='last_name' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' placeholder='Doe' required />
+                <input type='text' name='last_name' id='last_name' ref={lastName} className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' placeholder='Doe' required />
               </div>
             </div>
             <div className='mt-2'>
               <label htmlFor='email' className='block mb-2 text-sm font-medium text-gray-900'>Your email</label>
-              <input type='email' name='email' id='email' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' placeholder='johndoe@company.com' required />
+              <input type='email' name='email' id='email' ref={email} className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' placeholder='johndoe@company.com' required />
             </div>
             <div className='mt-2'>
               <label htmlFor='country' className='block mb-2 text-sm font-medium text-gray-900'>Country</label>
-              <select name='country' id='country' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' required>
+              <select name='country' id='country' ref={country} className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' required>
                 <option selected disabled>Select a country</option>
                 {countries.map((el, index) => {
                   return (
@@ -43,15 +62,15 @@ const SignUp = (props : any) => {
             </div>
             <div className='mt-2'>
               <label htmlFor='password' className='block mb-2 text-sm font-medium text-gray-900'>Password</label>
-              <input type='password' name='password' id='password' placeholder='••••••••••••' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' required />
+              <input type='password' name='password' id='password' ref={password} placeholder='••••••••••••' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' required />
             </div>
             <div className='mt-2 mb-6'>
               <label htmlFor='confirm-password' className='block mb-2 text-sm font-medium text-gray-900'>Confirm Password</label>
-              <input type='password' name='confirm-password' id='confirm-password' placeholder='••••••••••••' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' required />
+              <input type='password' name='confirm-password' id='confirm-password' ref={confirmPassword} placeholder='••••••••••••' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' required />
             </div>
             
             <button type='submit' className='w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center'
-              onClick={() => console.log('sign up')}>
+              onClick={(e) => SignUpHandle(e)}>
               Create Account
             </button>
             <p className='text-sm font-light text-gray-500 mt-5'>

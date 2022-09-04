@@ -22,19 +22,19 @@ const Reports = () => {
           <table className='w-full text-sm text-gray-500 border-1'>
             <thead className='text-md text-gray-700 bg-gray-100 border-1'>
               <tr>
-                <th scope='col' className='w-1/4 p-3'>
+                <th scope='col' className='w-1/5 p-3'>
                   Name
                 </th>
-                <th scope='col' className='w-1/4 p-3'>
+                <th scope='col' className='w-1/5 p-3'>
                   From Date
                 </th>
-                <th scope='col' className='w-1/4 p-3'>
+                <th scope='col' className='w-1/5 p-3'>
                   To Date
                 </th>
-                <th scope='col' className='w-1/4 p-3'>
+                <th scope='col' className='w-1/5 p-3'>
                   Date Created
                 </th>
-                <th scope='col' className='w-1/4 p-3 px-6'>
+                <th scope='col' className='w-1/5 p-3 px-6'>
                   Actions
                 </th>
               </tr>

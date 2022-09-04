@@ -25,19 +25,19 @@ const Transactions = () => {
           <table className='w-full text-sm text-gray-500 border-1'>
             <thead className='text-md text-gray-700 bg-gray-100 border-1'>
               <tr>
-                <th scope='col' className='w-1/4 p-3'>
+                <th scope='col' className='w-1/5 p-3'>
                   Name
                 </th>
-                <th scope='col' className='w-1/4 p-3'>
+                <th scope='col' className='w-1/5 p-3'>
                   Amount
                 </th>
-                <th scope='col' className='w-1/4 p-3'>
+                <th scope='col' className='w-1/5 p-3'>
                   Category
                 </th>
-                <th scope='col' className='w-1/4 p-3'>
+                <th scope='col' className='w-1/5 p-3'>
                   Date
                 </th>
-                <th scope='col' className='w-1/4 p-3'>
+                <th scope='col' className='w-1/5 p-3'>
                   Actions
                 </th>
               </tr>
