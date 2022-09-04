@@ -1,4 +1,6 @@
 import React from 'react';
+import { countries } from './Utils/Countries';
+import { currencies } from './Utils/Currencies';
 
 const Profile = () => {
   return (
@@ -9,22 +11,38 @@ const Profile = () => {
         <div className='flex-none w-72 mr-10'>
           <div className='mb-2'>
             <label htmlFor='first_name' className='block text-gray-700 text-sm font-bold mb-2'>First Name</label>
-            <input type='text' name='first_name' id='first_name' className='bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' defaultValue='John' />
+            <input type='text' name='first_name' id='first_name' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' defaultValue='John' />
           </div>
  
           <div className='mb-2'>
             <label htmlFor='last_name' className='block text-gray-700 text-sm font-bold mb-2'>Last Name</label>
-            <input type='text' name='last_name' id='last_name' className='bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' defaultValue='Doe' />
+            <input type='text' name='last_name' id='last_name' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' defaultValue='Doe' />
           </div>
 
           <div className='mb-2'>
             <label htmlFor='country' className='block text-gray-700 text-sm font-bold mb-2'>Country</label>
-            <input type='text' name='country' id='country' className='bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' defaultValue='United States of America' />
+            <select name='country' id='country' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2'>
+              {countries.map((el, index) => {
+                return (
+                  <option key={index} value={el.name} selected={el.name === 'Macedonia' ? true : false }>
+                    {el.name}
+                  </option>
+                )
+              })}
+            </select>
           </div>
 
           <div className='mb-4'>
             <label htmlFor='currency' className='block text-gray-700 text-sm font-bold mb-2'>Currency</label>
-            <input type='text' name='currency' id='currency' className='bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2' defaultValue='$' />
+            <select name='currency' id='currency' className='bg-gray-50 border outline-none border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2'>
+              {currencies.map((el, index) => {
+                return (
+                  <option key={index} value={el.code} selected={el.code === 'MKD' ? true : false }>
+                    {el.code} - {el.symbol}
+                  </option>
+                )
+              })}
+            </select>
           </div>
 
           <div className='mt-2'>
