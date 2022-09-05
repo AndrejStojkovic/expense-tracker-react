@@ -3,19 +3,20 @@ import { getAuth } from "firebase/auth";
 import { getFirestore, collection, doc, getDoc, setDoc } from '@firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: process.env.APP_FIREBASE_KEY,
-  authDomain: process.env.APP_FIREBASE_DOMAIN,
-  projectId: process.env.APP_FIREBASE_PID,
-  storageBucket: process.env.APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.APP_FIREBASE_SENDER_ID,
-  appId: process.env.APP_FIREBASE_APP_ID
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const db = getFirestore(app);
 
-export const createUserDocument = async ({user, userData}: any) => {
+// FIX USER NOT UPDATING TO DATABASE
+export const createUserDocument = async ({user, firstName, lastName, country}: any) => {
   if(!user) return;
 
   const collectionRef = collection(db, 'users');
@@ -25,10 +26,10 @@ export const createUserDocument = async ({user, userData}: any) => {
   if(!userRef.exists()) {
     try {
       await setDoc(doc(collectionRef, user.uid), {
-        firstName: userData.firstName,
-        lastName: userData.lastName,
+        firstName: firstName,
+        lastName: lastName,
         email: user,
-        country: userData.country,
+        country: country,
         createdAt: new Date(),
         lastPassChange: new Date()
       })
