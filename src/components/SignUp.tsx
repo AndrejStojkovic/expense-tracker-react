@@ -39,12 +39,7 @@ const SignUp = () => {
     if(password !== confirmPassword) { displayError('Password do not match!'); return; }
 
     try {
-      const user = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-
+      const user = await createUserWithEmailAndPassword(auth, email,password);
       await createUserDocument({user, firstName, lastName, country});
       console.log(user);
     } catch(error) {

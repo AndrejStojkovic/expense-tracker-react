@@ -24,7 +24,7 @@ const Alert = ({type, msg, show} : AlertProps) => {
         <div id='icon' className={`text-${color}-400`}>
           {type === 'success' ? ( <SuccessIcon /> ) : type === 'warning' ? ( <WarningIcon /> ) : ( <ErrorIcon /> ) }
         </div>
-        <div id='message'>
+        <div id='message' className='text-gray-800'>
           {msg}
         </div>
       </div> 
