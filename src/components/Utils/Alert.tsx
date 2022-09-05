@@ -13,7 +13,6 @@ const Alert = ({type, msg, show} : AlertProps) => {
 
   useEffect(() => {
     setColor(type === 'success' ? 'green' : type === 'warning' ? 'yellow' : 'red');
-
     console.log(show);
   }, [])
 
