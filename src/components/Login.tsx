@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Alert from './Utils/Alert';
+import { userLogin } from './Config/FirebaseConfig';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -18,13 +19,15 @@ const Login = () => {
     }, delay * 1000);
   }
 
-  const LoginHandle = (e: React.FormEvent<HTMLButtonElement>) => {
+  const LoginHandle = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     if(!email) { displayError('You need to enter an e-mail address!'); return; }
     if(!email.includes('@')) { displayError('E-mail address needs to contain @ symbol!'); return; }
     if(email[email.length - 1] === '@') { displayError('E-mail address needs to contain something after @ symbol!'); return; }
     if(!password) { displayError('You need to enter a password!'); return; }
+
+    return userLogin({email, password});
   }
 
   return (

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
-
-import {SuccessIcon, WarningIcon, ErrorIcon} from './AlertIcons';
+import { useEffect, useState } from 'react';
+import { SuccessIcon, WarningIcon, ErrorIcon } from './AlertIcons';
 
 type AlertProps = {
   type?: string,

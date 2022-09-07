@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { faquestions } from './Utils/FAQuestions';
 
 const Help = () => {

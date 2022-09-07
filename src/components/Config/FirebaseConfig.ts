@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from "firebase/auth";
-import { getFirestore, collection, doc, getDoc, setDoc } from '@firebase/firestore';
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, doc, getDoc, setDoc } from '@firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -15,26 +15,33 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
 export const db = getFirestore(app);
 
-// FIX USER NOT UPDATING TO DATABASE
-export const createUserDocument = async ({user, firstName, lastName, country}: any) => {
+export const createNewUser = async ({firstName, lastName, email, country, password}: any) => {
+  const user = await createUserWithEmailAndPassword(auth, email, password);
+
   if(!user) return;
 
-  const collectionRef = collection(db, 'users');
-  const docRef = doc(db, 'users', user.uid);
-  const userRef = await getDoc(docRef);
+  const userRef = await getDoc(doc(db, `/users/${user.user.uid}`));
   
   if(!userRef.exists()) {
     try {
-      await setDoc(doc(collectionRef, user.uid), {
+      const newUser = await setDoc(doc(db, `/users/${user.user.uid}`), {
         firstName: firstName,
         lastName: lastName,
-        email: user,
+        email: email,
         country: country,
         createdAt: new Date(),
         lastPassChange: new Date()
-      })
+      });
     } catch(err) {
       console.log(err);
     }
+  }
+}
+
+export const userLogin = async ({email, password}: any) => {
+  try {
+    const user = await signInWithEmailAndPassword(auth, email, password);
+  } catch(err) {
+    console.log(err);
   }
 }

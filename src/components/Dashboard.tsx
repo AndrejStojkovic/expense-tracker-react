@@ -1,5 +1,3 @@
-import React from 'react';
-
 import LineChart from './Charts/LineChart';
 import DoughnutChart from './Charts/DoughnutChart';
 import BarChart from './Charts/BarChart';

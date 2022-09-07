@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth, createUserDocument } from './Config/firebase-config';
+import { createNewUser } from './Config/FirebaseConfig';
 import { countries } from './Utils/Countries';
 import Alert from './Utils/Alert';
 
@@ -27,7 +26,6 @@ const SignUp = () => {
   const SignUpHandle = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    // Form check
     if(!firstName) { displayError('You need to enter a first name!'); return; }
     if(!lastName) { displayError('You need to enter a last name!'); return; }
     if(!country) {displayError('You need to select a valid country!'); return; }
@@ -39,9 +37,7 @@ const SignUp = () => {
     if(password !== confirmPassword) { displayError('Password do not match!'); return; }
 
     try {
-      const user = await createUserWithEmailAndPassword(auth, email,password);
-      await createUserDocument({user, firstName, lastName, country});
-      console.log(user);
+      await createNewUser({firstName, lastName, email, country, password});
     } catch(error) {
       console.log(error);
     }

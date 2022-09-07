@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const Transactions = () => {
   const [pageNumber, setPageNumber] = useState(1);

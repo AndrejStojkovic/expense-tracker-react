@@ -1,4 +1,3 @@
-import React from 'react';
 import { countries } from './Utils/Countries';
 import { currencies } from './Utils/Currencies';
 
